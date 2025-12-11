@@ -1,34 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Blog preview card</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    @font-face {
+      font-family: Figtree;
+      src: url(assets/fonts/Figtree-VariableFont_wght.ttf);
+    }
+
+    /* 1. Use a more-intuitive box-sizing model */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    /* 2. Remove default margin */
+    * {
+      margin: 0;
+    }
+
+    /* 3. Enable keyword animations */
+    /* @media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+} */
+
+    body {
+      /* 4. Add accessible line-height */
+      line-height: 1.5;
+      /* 5. Improve text rendering */
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* 6. Improve media defaults */
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* 7. Inherit fonts for form controls */
+    input,
+    button,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    /* 8. Avoid text overflows */
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      overflow-wrap: break-word;
+    }
+
+    /* 9. Improve line wrapping */
+    p {
+      text-wrap: pretty;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-wrap: balance;
+    }
+
+    /*
+  10. Create a root stacking context
+*/
+    #root,
+    #__next {
+      isolation: isolate;
+    }
+
+
+    /* Default stillər - kiçik ekranlar üçün (media query-siz) */
+    .text1 {
+      color: var(--gray-950);
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 150%;
+      letter-spacing: 0;
+    }
+
+    .text2 {
+      color: var(--gray-500);
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 150%;
+      letter-spacing: 0;
+      padding-block: 12px;
+    }
+
+    .text3 {
+      color: var(--gray-950);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 150%;
+      letter-spacing: 0;
+      padding-block: 12px;
+    }
+
+    .text4 {
+      padding: 6px 12px;
+      color: var(--gray-950);
+      font-size: 14px;
+      font-weight: 900;
+      line-height: 150%;
+      letter-spacing: 0;
+      background-color: var(--yellow);
+      border-radius: 4px;
+      display: inline;
+    }
+
+    .Autor {
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 150%;
+      display: flex;
+      align-items: center;
+      padding-block: 12px;
+    }
+
+    .text1:hover,
+    .text2:hover,
+    .text3:hover {
+      color: var(--yellow);
+      cursor: pointer;
+    }
+    
+    @media screen and (max-width: 600px) {
+      .Card {
+        width: 327px;
+        height: 501px;
+      }
+
+      .image1 {
+        width: 279px;
+      }
+
+      .text1 {
+        font-size: 20px;
+      }
+
+      .text2 {
+        font-size: 14px;
+      }
+
+      .text3 {
+        font-size: 12px;
+      }
+
+      .text4 {
+        font-size: 12px;
+      }
+    }
+
+    :root {
+      /* --Colors-- */
+      --yellow: #F4D04E;
+      --gray-950: #111111;
+      --gray-500: #6B6B6B;
+      --white: #FFFFFF;
+
+      /* -- Spacing -- */
+      --sp300: 24px;
+      --sp150: 12px;
+      --sp100: 8px;
+      --sp50: 4px;
+    }
+
+    body {
+      background-color: var(--yellow);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .Card {
+      width: 384px;
+      height: 522px;
+      border: 1px solid var(--gray-950);
+      border-radius: 20px;
+      box-shadow: 10px 10px var(--gray-950);
+      font-family: Figtree, system-ui;
+      background-color: var(--white);
+    }
+
+    .image1 {
+      border-radius: 10px;
+      margin: 24px;
+      object-fit: cover;
+      height: 200px;
+    }
+
+    .image2 {
+      margin-inline: 24px 12px;
+    }
+
+    .Content {
+      margin-inline: 24px;
+    }
+
   </style>
 </head>
 <body>
+  <div class="Card">
 
-  Learning
+    <!-- Image -->
+    <div class="Blog-Image">
+      <img class="image1" src="assets/images/illustration-article.svg" alt="">
+    </div>
 
-  Published 21 Dec 2023
-
-  HTML & CSS foundations
-
-  These languages are the backbone of every website, defining structure, content, and presentation.
-
-  Greg Hooper
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    <!-- Content -->
+    <div class="Content">
+      <p class="text4">Learning</p>
+      <p class="text3">Published 21 Dec 2023</p>
+      <p class="text1">HTML & CSS foundations</p>
+      <p class="text2">These languages are the backbone of every website, defining structure, content, and presentation.
+      </p>
+    </div>
+    <!-- User -->
+    <div class="Autor">
+      <img class="image2" src="assets/images/image-avatar.webp" alt="" width="32px" height="32px">
+      <p>Greg Hooper</p>
+    </div>
   </div>
 </body>
 </html>
