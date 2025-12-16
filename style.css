@@ -7,7 +7,6 @@
     *::after {
       box-sizing: border-box;
     }
-
     /* 2. Remove default margin */
     * {
       margin: 0;
