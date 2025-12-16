@@ -2,8 +2,6 @@
       font-family: Figtree;
       src: url(assets/fonts/Figtree-VariableFont_wght.ttf);
     }
-
-    /* 1. Use a more-intuitive box-sizing model */
     *,
     *::before,
     *::after {
@@ -134,14 +132,14 @@
       cursor: pointer;
     }
     
-    @media screen and (max-width: 8rem) {
+    @media screen and (max-width: 768px) {
       .Container {
-        width: 4.36rem;
-        height: 6.68rem;
+        width: 327px;
+        height: 501px;
       }
 
       .image1 {
-        width: 3.72rem;
+        width: 279px;
       }
 
       .text1 {
@@ -184,8 +182,8 @@
     }
 
     .Container {
-      width: 5.12rem;
-      height: 6.96rem;
+      width: 384px;
+      height: 521px;
       border: 1px solid var(--gray-950);
       border-radius: .266667rem;
       box-shadow: .133333rem .133333rem var(--gray-950);
@@ -197,12 +195,12 @@
       border-radius: .133333rem;
       margin: .32rem;
       object-fit: cover;
-      height: 2.666667rem;
+      height: 200px;
     }
 
     .image2 {
       margin-inline: .32rem .16rem;
-      width: .426667rem;
+      width: 32px;
     }
 
     .Content {
